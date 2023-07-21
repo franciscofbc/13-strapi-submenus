@@ -3,14 +3,14 @@ import { useGlobalContext } from '../context';
 import sublinks from '../data';
 
 const Navbar = () => {
-  const { openSidebar } = useGlobalContext();
+  const { openSidebar, setPageId } = useGlobalContext();
 
   return (
     <nav className="navbar">
       <h3 className="logo">strapi</h3>
       <ul className="navlinks hide-navlinks">
         {sublinks.map((sublink) => {
-          const { pageId, page, links } = sublink;
+          const { pageId, page } = sublink;
           return <li key={pageId}>{page}</li>;
         })}
       </ul>
