@@ -431,6 +431,8 @@ main {
 
   .submenu {
     visibility: visible;
+    opacity: 1;
+    transition: var(--transition);
 
     position: fixed;
     top: 182px;
@@ -440,5 +442,10 @@ main {
     padding: 32px;
     background: var(--white);
     border-radius: var(--borderRadius);
+  }
+
+  .hide-submenu {
+    visibility: hidden;
+    opacity: 0;
   }
 }

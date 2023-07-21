@@ -12,7 +12,12 @@ const Submenu = () => {
       : setPage({});
   }, [pageId]);
 
-  return <div className="submenu">{page && <h5>{page.page}</h5>}</div>;
+  return (
+    <div className={page ? 'submenu' : 'hide-submenu'}>
+      {/* <h5>{page.page}</h5> */}
+      {console.log(pageId)}
+    </div>
+  );
 };
 
 export default Submenu;
