@@ -14,7 +14,7 @@ const Submenu = () => {
 
   return (
     <div className={page ? 'submenu' : 'hide-submenu'}>
-      {/* <h5>{page.page}</h5> */}
+      {page && <h5>{page.page}</h5>}
       {console.log(pageId)}
     </div>
   );
