@@ -18,13 +18,13 @@ const Sidebar = () => {
         const { pageId, page, links } = sublink;
         return (
           <div key={pageId} className="sublinks">
-            <h5>{page}</h5>
+            <h5 className="page">{page}</h5>
             <ul className="links">
               {links.map((link) => {
                 const { id, label, icon, url } = link;
                 return (
                   <li key={id}>
-                    <a href={url}>
+                    <a className="link" href={url}>
                       {icon}
                       {label}
                     </a>

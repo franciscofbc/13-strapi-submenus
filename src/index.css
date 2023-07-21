@@ -344,7 +344,7 @@ main {
   margin-top: 32px;
 }
 
-.sublinks h5 {
+.page {
   font-size: 20px;
   line-height: 20px;
   color: var(--primary-700);
@@ -358,7 +358,7 @@ main {
   align-items: center;
 }
 
-.links a {
+.link {
   text-transform: capitalize;
   margin-bottom: 8px;
   color: var(--grey-900);

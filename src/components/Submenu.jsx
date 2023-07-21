@@ -4,18 +4,30 @@ import sublinks from '../data';
 
 const Submenu = () => {
   const { pageId } = useGlobalContext();
-  const [page, setPage] = useState({});
+  const [page, setPage] = useState(null);
 
   useEffect(() => {
-    pageId !== undefined
+    pageId
       ? setPage(sublinks.find((sublink) => sublink.pageId === pageId))
-      : setPage({});
+      : setPage(null);
   }, [pageId]);
 
   return (
     <div className={page ? 'submenu' : 'hide-submenu'}>
-      {page && <h5>{page.page}</h5>}
-      {console.log(pageId)}
+      <h5 className="page">{page?.page}</h5>
+      <ul className="links">
+        {page?.links.map((link) => {
+          const { id, label, icon, url } = link;
+          return (
+            <li key={id}>
+              <a className="link" href={url}>
+                {icon}
+                {label}
+              </a>
+            </li>
+          );
+        })}
+      </ul>
     </div>
   );
 };
