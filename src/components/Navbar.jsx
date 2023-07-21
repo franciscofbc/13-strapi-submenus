@@ -11,7 +11,16 @@ const Navbar = () => {
       <ul className="navlinks hide-navlinks">
         {sublinks.map((sublink) => {
           const { pageId, page } = sublink;
-          return <li key={pageId}>{page}</li>;
+          return (
+            <li
+              key={pageId}
+              onMouseEnter={() => {
+                setPageId(pageId);
+              }}
+            >
+              {page}
+            </li>
+          );
         })}
       </ul>
       <button

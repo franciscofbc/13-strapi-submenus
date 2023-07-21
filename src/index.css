@@ -388,6 +388,10 @@ main {
   line-height: 24px;
 }
 
+.submenu {
+  visibility: hidden;
+}
+
 @media (min-width: 992px) {
   .hero {
     text-align: center;
@@ -419,5 +423,21 @@ main {
   .navlinks li {
     cursor: pointer;
     padding: 16px 16px;
+  }
+
+  .navlinks li:hover {
+    background-color: red;
+  }
+
+  .submenu {
+    visibility: visible;
+    position: fixed;
+    top: 182px;
+    max-width: var(--max-width);
+    width: var(--fluid-width);
+
+    padding: 32px;
+    background: var(--white);
+    border-radius: var(--borderRadius);
   }
 }
