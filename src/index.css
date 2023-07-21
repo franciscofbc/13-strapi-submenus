@@ -431,6 +431,7 @@ main {
 
   .submenu {
     visibility: visible;
+
     position: fixed;
     top: 182px;
     max-width: var(--max-width);

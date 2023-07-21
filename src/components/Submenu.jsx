@@ -7,11 +7,12 @@ const Submenu = () => {
   const [page, setPage] = useState({});
 
   useEffect(() => {
-    pageId !== undefined &&
-      setPage(sublinks.find((sublink) => sublink.pageId === pageId));
+    pageId !== undefined
+      ? setPage(sublinks.find((sublink) => sublink.pageId === pageId))
+      : setPage({});
   }, [pageId]);
 
-  return <div className="submenu">{console.log(page)}</div>;
+  return <div className="submenu">{page && <h5>{page.page}</h5>}</div>;
 };
 
 export default Submenu;
