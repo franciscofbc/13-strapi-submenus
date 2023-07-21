@@ -274,7 +274,7 @@ main {
   justify-content: space-between;
   align-items: center;
 
-  border: 1px solid red;
+  padding: 4px;
 }
 
 .logo {
@@ -284,6 +284,11 @@ main {
   color: var(--white);
   font-size: 30.25px;
   line-height: 31.25px;
+}
+
+.hide-navlinks {
+  display: none;
+  /* visibility: hidden; */
 }
 
 .btn-open-sidebar {
@@ -301,4 +306,118 @@ main {
 .btn-open-sidebar:hover {
   box-shadow: var(--shadow-4);
   transform: scale(1.1);
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  background: var(--white);
+
+  opacity: 0;
+  visibility: hidden;
+  transition: var(--transition);
+
+  padding: 50px 32px;
+}
+
+.show-sidebar {
+  opacity: 1;
+  visibility: visible;
+}
+
+.btn-close-sidebar {
+  cursor: pointer;
+  border-color: transparent;
+  background: transparent;
+  color: var(--primary-500);
+  font-size: 24px;
+  position: absolute;
+  top: 18px;
+  right: 38px;
+}
+
+.sublinks {
+  margin-top: 32px;
+}
+
+.sublinks h5 {
+  font-size: 20px;
+  line-height: 20px;
+  color: var(--primary-700);
+}
+
+.links {
+  margin-top: 16px;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+}
+
+.links a {
+  text-transform: capitalize;
+  margin-bottom: 8px;
+  color: var(--grey-900);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 16px;
+
+  display: flex;
+  align-items: center;
+  column-gap: 16px;
+}
+
+.hero {
+  color: var(--white);
+  margin-top: 224px;
+  max-width: var(--fixed-width);
+}
+
+.hero h5 {
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 60px;
+  margin-bottom: 16px;
+}
+
+.hero p {
+  line-height: 24px;
+}
+
+@media (min-width: 992px) {
+  .hero {
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 224px;
+  }
+
+  .hide-btn-open-sidebar {
+    visibility: hidden;
+  }
+
+  .show-sidebar {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  .navlinks {
+    display: flex;
+    /* column-gap: 36px; */
+
+    text-transform: capitalize;
+    color: var(--white);
+    font-size: 20px;
+    line-height: 23px;
+    letter-spacing: var(--letterSpacing);
+    font-weight: 400;
+  }
+
+  .navlinks li {
+    cursor: pointer;
+    padding: 16px 16px;
+  }
 }
