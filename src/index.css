@@ -270,6 +270,8 @@ main {
 }
 
 .navbar {
+  border: 1px solid red;
+
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -423,10 +425,6 @@ main {
   .navlinks li {
     cursor: pointer;
     padding: 16px 16px;
-  }
-
-  .navlinks li:hover {
-    background-color: red;
   }
 
   .submenu {
