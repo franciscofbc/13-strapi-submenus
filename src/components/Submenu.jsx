@@ -1,15 +1,31 @@
+import { useRef } from 'react';
 import { useGlobalContext } from '../context';
 import sublinks from '../data';
 
 const Submenu = () => {
-  const { pageId } = useGlobalContext();
+  const { pageId, setPageId } = useGlobalContext();
+  const page = sublinks.find((sublink) => sublink.pageId === pageId) || null;
+  const subMenuContainer = useRef(null);
 
-  // const page = sublinks.find((sublink) => sublink.pageId === pageId) || null;
-  const page = sublinks.find((sublink) => sublink.pageId === pageId);
+  const handleOnMouseLeave = (e) => {
+    const submenu = subMenuContainer.current.getBoundingClientRect();
+    const { left, right, bottom } = submenu;
+
+    if (
+      e.clientX < left - 1 ||
+      e.clientX > right - 1 ||
+      e.clientY > bottom - 1
+    ) {
+      setPageId(null);
+    }
+  };
 
   return (
-    // <div className={page ? 'submenu' : 'hide-submenu'}>
-    <div className={page && 'submenu'}>
+    <div
+      className={page ? 'submenu' : 'hide-submenu'}
+      onMouseLeave={handleOnMouseLeave}
+      ref={subMenuContainer}
+    >
       <h5 className="page">{page?.page}</h5>
       <ul className="links">
         {page?.links?.map((link) => {

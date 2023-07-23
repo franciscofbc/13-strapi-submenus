@@ -270,13 +270,13 @@ main {
 }
 
 .navbar {
-  border: 1px solid red;
+  height: 5rem;
 
   display: flex;
   justify-content: space-between;
   align-items: center;
 
-  padding: 4px;
+  /* padding: 4px; */
 }
 
 .logo {
@@ -422,7 +422,11 @@ main {
     font-weight: 400;
   }
 
-  .navlinks li {
+  .navlinks .navlink {
+    height: 5rem;
+    display: flex;
+    align-items: center;
+
     cursor: pointer;
     padding: 16px 16px;
   }

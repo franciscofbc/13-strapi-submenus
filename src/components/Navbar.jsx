@@ -1,34 +1,21 @@
 import { FaBars } from 'react-icons/fa';
 import { useGlobalContext } from '../context';
-import sublinks from '../data';
+import Navlinks from './Navlinks';
 
 const Navbar = () => {
   const { openSidebar, setPageId } = useGlobalContext();
 
+  const handleOnMouseOver = (e) => {
+    // console.log(e.target.classList);
+    if (!e.target.classList.contains('navlink')) {
+      setPageId(null);
+    }
+  };
+
   return (
-    <nav className="navbar">
+    <nav className="navbar" onMouseOver={handleOnMouseOver}>
       <h3 className="logo">strapi</h3>
-      <ul className="navlinks hide-navlinks">
-        {sublinks.map((sublink) => {
-          const { pageId, page } = sublink;
-          return (
-            <li
-              key={pageId}
-              onMouseEnter={() => {
-                setPageId(pageId);
-              }}
-              // onMouseLeave={() => {
-              //   setPageId(null);
-              // }}
-              // onMouseOver={() => {
-              //   setPageId(pageId);
-              // }}
-            >
-              {page}
-            </li>
-          );
-        })}
-      </ul>
+      <Navlinks />
       <button
         type="button"
         className="btn-open-sidebar hide-btn-open-sidebar"
